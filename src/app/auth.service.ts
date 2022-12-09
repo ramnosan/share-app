@@ -45,7 +45,7 @@ export class AuthService {
   }
 
   register(data:any){
-    console.log(data)
+    console.log(data, "lol")
     return this.httpClient.post<any>(AppSettings.API_URL+"/register", data)
   }
 }
