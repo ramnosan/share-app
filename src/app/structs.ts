@@ -5,6 +5,12 @@ export interface User{
     password: string;
 }
 
+export interface RegisterInput{
+    Name:string;
+    Email:string;
+    Password:string;
+}
+
 export interface AuthenticationResponse{
     token: string;
 }

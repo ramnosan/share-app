@@ -6,23 +6,29 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { ElecDashboardComponent } from './elec-dashboard/elec-dashboard.component';
+import { Routes } from '@angular/router';
+import { EntgeldatlasComponent } from './entgeldatlas/entgeldatlas.component';
+
+const appRoutes: Routes = [
+
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ElecDashboardComponent,
+    EntgeldatlasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
     HttpClientModule,
     FormsModule
   ],

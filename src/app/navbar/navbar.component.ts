@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppSettings } from '../AppSetting';
 import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-navbar',
@@ -11,5 +12,12 @@ export class NavbarComponent {
 
   logout(){
     this.authService.logout()
+  }
+
+  isLoggedIn(){
+    if(this.authService.token!=""){
+      return true
+    }
+    else return false
   }
 }

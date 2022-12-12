@@ -12,12 +12,10 @@ import { User } from './structs';
 })
 export class GraphqlService {
   private headers: HttpHeaders
-  private schema: GraphQLSchema;
   constructor(private httpClient: HttpClient) { 
     this.headers = new HttpHeaders();
     this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8');
     //this.headers = this.headers.set('Content-Type', 'application/graphql')
-    this.schema = buildSchema(AppSettings.SCHEMA_STRING);
   }
 
   login (): Observable<any>{

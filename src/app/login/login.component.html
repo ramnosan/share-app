@@ -1,14 +1,31 @@
-<div class="content">
-    <form #userlogin = "ngForm" (ngSubmit)="onLogin(userlogin.value)">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">User name</label>
-            <input ngModel name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text"></div>
-          </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input ngModel name="password" type="password" class="form-control" id="exampleInputPassword1">
+<div class="content mx-auto" style="max-width: 500px;">
+  <form #userlogin = "ngForm" (ngSubmit)="onLogin(userlogin.value)">
+      <div class="row">
+          <label for="exampleInputEmail1" class="form-label">User name</label>
+          <input ngModel name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text"></div>
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
+      <div class="row">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input ngModel name="password" type="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <br>
+      <div class="row mx-auto">
+        <button type="submit" class="col btn btn-primary">
+          Login
+          <div  *ngIf="isFetching==true" class="spinner-grow spinner-grow-sm" role="status">
+            <span class="sr-only"></span>
+          </div>
+        </button>
+        
+      </div>
+  </form>
+  
+  <div *ngIf="status!=null" class="alert alert-danger">
+    <h1>Check your login credentials</h1>
+    <p>Status: {{status}}</p>
+  </div>
 </div>
+
+
+
